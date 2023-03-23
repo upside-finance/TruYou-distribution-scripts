@@ -23,13 +23,8 @@ const main = async () => {
     if (month == 1) {
       return totalTokens * 0.1;
     } else {
-      let alreadyDistributed;
-      if (month == 2) {
-        alreadyDistributed = totalTokens * 0.1;
-      } else {
-        alreadyDistributed =
-          totalTokens * 0.1 + totalTokens * 0.9 * 0.08 * (month - 2);
-      }
+      const alreadyDistributed =
+        totalTokens * 0.1 + totalTokens * 0.9 * 0.08 * (month - 2);
 
       if (alreadyDistributed >= totalTokens) {
         return 0;
